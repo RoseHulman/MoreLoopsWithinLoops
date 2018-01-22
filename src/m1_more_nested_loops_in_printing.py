@@ -116,7 +116,7 @@ def triangle_upside_down(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -124,12 +124,14 @@ def triangle_upside_down(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
-
+    indexing = 1
     for k in range(r):
         for j in range(k+1):
             print(' ', end='')
         for l in range(r-k, 0, -1):
-            print(r-l+1, end='')
+            print(indexing, end='')
+            indexing = indexing + 1
+        indexing = 1
         print()
 
 
@@ -174,7 +176,7 @@ def vee(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -182,6 +184,22 @@ def vee(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    indexing = 1
+    indexingtwo = r
+    for k in range(r):
+        for j in range(k+1):
+            print(' ', end='')
+        for l in range(r-k, 0, -1):
+            print(indexing, end='')
+            indexing = indexing + 1
+        indexing = 1
+        print('-', end='')
+        for m in range(r-k):
+            print(indexingtwo, end='')
+            indexingtwo = indexingtwo - 1
+        indexingtwo = r - k - 1
+        print()
 
 
 def run_test_numbers_constant_forward():
@@ -230,7 +248,7 @@ def numbers_constant_forward(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -240,6 +258,13 @@ def numbers_constant_forward(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for k in range(r):
+        for j in range(maxnum):
+            for l in range(n):
+                print(j+1, end='')
+            print(' ', end='')
+        print()
 
 
 def run_test_numbers_constant_backwards():
@@ -274,7 +299,7 @@ def numbers_constant_backwards(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -282,6 +307,13 @@ def numbers_constant_backwards(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for k in range(r):
+        for j in range(maxnum):
+            for l in range(n):
+                print(maxnum-j, end='')
+            print(' ', end='')
+        print()
 
 
 def run_test_numbers_increasing_forward():
