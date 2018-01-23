@@ -49,7 +49,7 @@ def draw_upside_down_wall(rectangle, n, window):
     and n is nonnegative.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     Some tests are already written for you (above).
     # ------------------------------------------------------------------
     distancex = rectangle.corner_1.x - rectangle.corner_2.x
@@ -62,15 +62,15 @@ def draw_upside_down_wall(rectangle, n, window):
     y1 = rectangle.corner_1.y
     y2 = rectangle.corner_2.y
     for k in range(n):
-        for j in range(n - k):
-            newrect = rg.Rectangle(rg.Point(x1 + j*distancex, y1),
-                                   rg.Point(x2 + j*distancex, y2))
+        for j in range(k+1):
+            newrect = rg.Rectangle(rg.Point(x1 - j*distancex, y1),
+                                   rg.Point(x2 - j*distancex, y2))
             newrect.attach_to(window)
             window.render()
         x1 = start1.x + startdistance*(k+1)
         x2 = start2.x + startdistance*(k+1)
-        y1 = start1.y - distancey*(k+1)
-        y2 = start2.y - distancey*(k+1)
+        y1 = start1.y + distancey*(k+1)
+        y2 = start2.y + distancey*(k+1)
 
 
 # ----------------------------------------------------------------------
